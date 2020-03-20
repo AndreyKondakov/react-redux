@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const state = {
+  todos: [
+    {id: 1, name: 'Creacte statuc UI.', isComplete: true},
+    {id: 2, name: 'Creacte initial state.', isComplete: true},
+    {id: 3, name: 'Use state to Render UI.', isComplete: false},
+  ]
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+ReactDOM.render(<App todos={state.todos} />, document.getElementById('root'));
 serviceWorker.unregister();
