@@ -4,7 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './store'
+import {updateCurrent} from './reducers/todo'
 
-const state = store.getState()
-ReactDOM.render(<App {...state} />, document.getElementById('root'));
+const todoChangeHandler = (val) => store.dispatch(updateCurrent(val))
+
+const render = () => {
+  const state = store.getState()
+  ReactDOM.render(<App todos={state.todos}
+     currentTodo={state.currentTodo}
+     changeCurrent={todoChangeHandler}
+      />, document.getElementById('root'));
+}
+render()
+
+store.subscribe(render)
+
 serviceWorker.unregister();
