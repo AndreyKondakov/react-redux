@@ -11,6 +11,7 @@ class TodoForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.saveTodo(this.props.currentTodo)
+    this.props.updateCurrent('')
   }
 
   render () {
