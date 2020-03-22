@@ -4,9 +4,9 @@ import {fetchTodos} from '../reducers/todo'
 
 const TodoItem = ({id, name, isComplete}) => (
   <li>
-        <input type='checkbox' defaultChecked={isComplete} />
-        {name}
-      </li>
+    <input type='checkbox' defaultChecked={isComplete} />
+    {name}
+  </li>
 )
 
 class TodoList extends Component {
