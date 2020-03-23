@@ -36,17 +36,17 @@
     },
     {
       "name": "Test saving",
-      "isComplete": false,
+      "isComplete": true,
       "id": 10
     },
     {
       "name": "wereafsdffsadf",
-      "isComplete": false,
+      "isComplete": true,
       "id": 12
     },
     {
       "name": "test",
-      "isComplete": false,
+      "isComplete": true,
       "id": 13
     },
     {

@@ -1,8 +1,10 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 import Message from './components/Message'
+import Footer from './components/Footer'
 
 function App(props) {
   return (
@@ -10,11 +12,16 @@ function App(props) {
       <p>
         Welcome to React with Redux
       </p>
-      <div className='Todo-App'>
-        <Message />
-        <TodoForm />
-        <TodoList />
-      </div>
+      <Router>
+        <div className='Todo-App'>
+          <Message />
+          <TodoForm />
+          <Route path='/:filter?' render={({match}) => (
+            <TodoList filter={match.params.filter} />
+          )} />
+          <Footer />
+        </div>
+      </Router>
     </div>
   );
 }
